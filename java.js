@@ -1,61 +1,84 @@
-  
-  document.getElementById("registroForm").addEventListener("submit", function(event){
-      event.preventDefault(); 
-      
-      let nombre = document.getElementById("nombre").value.trim();
-      let correo = document.getElementById("correo").value.trim();
-      let password = document.getElementById("password").value;
-      let confirmPassword = document.getElementById("confirmPassword").value;
-      let errorMsg = document.getElementById("errorMsg");
-      
-      
-      if(nombre === "" || correo === "" || password === "" || confirmPassword === ""){
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("JS cargado ");
+
+  const registroForm = document.getElementById("registroform");
+  if (registroForm) {
+    registroForm.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const Usuario = document.getElementById("Usuario").value.trim();
+      const Correo = document.getElementById("Correo").value.trim();
+      const Contraseña = document.getElementById("Contraseña").value.trim();
+      const Confirmarcontraseña = document.getElementById("Confirmarcontraseña").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!Usuario || !Correo || !Contraseña || !Confirmarcontraseña) {
         errorMsg.textContent = "Todos los campos son obligatorios.";
         return;
       }
-      
-      
-      let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if(!regexCorreo.test(correo)){
-        errorMsg.textContent = "Ingrese un correo válido.";
-        return;
-      }
-      
-      
-      if(password !== confirmPassword){
+
+      if (Contraseña !== Confirmarcontraseña) {
         errorMsg.textContent = "Las contraseñas no coinciden.";
         return;
       }
 
-      
-      errorMsg.textContent = "";
-      alert("Registro exitoso. Bienvenido, " + nombre + "!");
-      document.getElementById("registroForm").reset(); 
+      try {
+        const response = await fetch("http://localhost:3000/registro", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ Usuario, Correo, Contraseña })
+        });
 
-      window.location.href = "Inicio.html";
+        const text = await response.text();
+        alert(text);
+
+        if (response.ok) {
+          window.location.href = "Inicio.html";
+        } else {
+          errorMsg.textContent = text;
+        }
+      } catch (error) {
+        errorMsg.textContent = "Error de conexión con el servidor.";
+        console.error(error);
+      }
     });
-
-document.getElementById("secionform").addEventListener("submit", function(event){
-  event.preventDefault(); 
-
-  let correo = document.getElementById("correo").value.trim();
-  let password = document.getElementById("password").value;
-  let errorMsg = document.getElementById("errorMsg");
-
-  if(correo === "" || password === ""){
-    errorMsg.textContent = "Todos los campos son obligatorios.";
-    return;
   }
 
-  let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!regexCorreo.test(correo)){
-    errorMsg.textContent = "Ingrese un correo válido.";
-    return;
+  const loginForm = document.getElementById("sesionform");
+  if (loginForm) {
+    loginForm.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      console.log("Intentando iniciar sesión...");
+
+      const Usuario = document.getElementById("Usuario").value.trim();
+      const Contraseña = document.getElementById("Contraseña").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!Usuario || !Contraseña) {
+        errorMsg.textContent = "Todos los campos son obligatorios.";
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ Usuario, Contraseña })
+        });
+
+        const text = await response.text();
+        console.log("Respuesta del servidor:", text);
+
+        if (response.ok) {
+          alert("Inicio de sesión exitoso ");
+          window.location.href = "Inicio.html";
+        } else {
+          errorMsg.textContent = text;
+        }
+      } catch (error) {
+        errorMsg.textContent = "Error de conexión con el servidor.";
+        console.error(error);
+      }
+    });
   }
-
-  errorMsg.textContent = "";
-  alert("Inicio de sesión exitoso. Bienvenido!");
-  document.getElementById("secionform").reset(); 
-
-  window.location.href = "Inicio.html"; 
 });
