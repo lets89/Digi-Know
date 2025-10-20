@@ -1,90 +1,45 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const db = require('./database');
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const db = require("./database");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
+app.post("/registro", (req, res) => {
+  const { Usuario, Correo, Contraseña } = req.body;
 
-document.addEventListener("DOMContentLoaded", () => {
-
-  
-  const registroForm = document.getElementById("registroform");
-  if (registroForm) {
-    registroForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const Usuario = document.getElementById("Usuario").value.trim();
-      const Correo = document.getElementById("Correo").value.trim();
-      const Contraseña = document.getElementById("Contraseña").value.trim();
-      const Confirmarcontraseña = document.getElementById("Confirmarcontraseña").value.trim();
-      const errorMsg = document.getElementById("errorMsg");
-
-      if (!Usuario || !Correo || !Contraseña || !Confirmarcontraseña) {
-        errorMsg.textContent = "Todos los campos son obligatorios.";
-        return;
-      }
-
-      if (Contraseña !== Confirmarcontraseña) {
-        errorMsg.textContent = "Las contraseñas no coinciden.";
-        return;
-      }
-
-      try {
-        const response = await fetch("http://localhost:3000/registro", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ Usuario, Correo, Contraseña }),
-        });
-
-        const text = await response.text();
-        alert(text);
-
-        if (response.ok) window.location.href = "Inicio.html";
-        else errorMsg.textContent = text;
-      } catch (error) {
-        errorMsg.textContent = "Error de conexión con el servidor.";
-      }
-    });
+  if (!Usuario || !Correo || !Contraseña) {
+    return res.status(400).send("Todos los campos son obligatorios.");
   }
 
-
-  const loginForm = document.getElementById("sesionform");
-  if (loginForm) {
-    loginForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const Usuario = document.getElementById("Usuario").value.trim();
-      const Contraseña = document.getElementById("Contraseña").value.trim();
-      const errorMsg = document.getElementById("errorMsg");
-
-      if (!Usuario || !Contraseña) {
-        errorMsg.textContent = "Todos los campos son obligatorios.";
-        return;
-      }
-
-      try {
-        const response = await fetch("http://localhost:3000/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ Usuario, Contraseña }),
-        });
-
-        const text = await response.text();
-
-        if (response.ok) {
-          alert("Inicio de sesión exitoso ");
-          window.location.href = "Inicio.html";
-        } else {
-          errorMsg.textContent = text;
-        }
-      } catch (error) {
-        errorMsg.textContent = "Error de conexión con el servidor.";
-        console.error(error);
-      }
-    });
-  }
+  const sql = "INSERT INTO cuentas (Usuario, Correo, Contraseña) VALUES (?, ?, ?)";
+  db.query(sql, [Usuario, Correo, Contraseña], (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Error al registrar el usuario.");
+    }
+    res.send("Registro exitoso.");
+  });
 });
+
+
+app.post("/login", (req, res) => {
+  const { Usuario, Contraseña } = req.body;
+  const sql = "SELECT * FROM cuentas WHERE Usuario = ? AND Contraseña = ?";
+
+  db.query(sql, [Usuario, Contraseña], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Error al iniciar sesión.");
+    }
+    if (result.length > 0) res.send("Inicio de sesión exitoso");
+    else res.status(401).send("Usuario o contraseña incorrectos.");
+  });
+});
+
+app.listen(3000, () => console.log("Servidor corriendo en http://localhost:3000"));
+

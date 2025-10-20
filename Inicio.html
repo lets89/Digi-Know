@@ -11,6 +11,10 @@
         h1 {
             color: #ffffff;
         }
+
+        h2 {
+         margin: 80px 0 0 100px   
+        }
         p {
             color: #ffffff;
         }
@@ -42,22 +46,101 @@
     </header>
     
    <h1>Inicio</h1>
+   <h1>¡Bienbenido!</h1> 
 <div class="reciente">
 <h2>Recientes</h2>
 </div>
-<div class="espe">
-<a href="matematica.html"><img  src="Matematica.png" ></a>
-</div>
-<div class="espe2">
-<a href="programacion.html"> <img  src="Programación.png"></a>
-</div>
-<div class="espe3">
-<a href="ingles.html"><img  src="Ingles.png"></a>
-</div>
+ <div id="recientesClases" class="reciente-lista">
+        <ul id="listaRecientesClases"></ul>
+    </div>
+
 <br><br><br><br>
 <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+   <script>
+const STORAGE_KEY = "digiknow_recientes_clases";
+const IMAGENES_CLASES = {
+  "matematica.html": "Matematica.png",
+  "programacion.html": "Programación.png",
+  "ingles.html": "Ingles.png"
+};
+
+function leerHistorial() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
+}
+
+function mostrarHistorial() {
+  const contenedor = document.getElementById("recientesClases");
+  const historial = leerHistorial();
+
+  contenedor.innerHTML = "";
+
+  if (historial.length === 0) {
+    contenedor.innerHTML = "<p style='color:white;'>No has visitado ninguna clase recientemente.</p>";
+    return;
+  }
+
+  historial.forEach(p => {
+    const clave = Object.keys(IMAGENES_CLASES).find(k => p.url.includes(k));
+    const imagen = IMAGENES_CLASES[clave] || "default.png";
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "tarjeta";
+    tarjeta.innerHTML = `
+      <a href="${p.url}" style="text-decoration:none; color:inherit;">
+        <img src="${imagen}" alt="${p.titulo}">
+      </a>
+    `;
+    contenedor.appendChild(tarjeta);
+  });
+}
+
+mostrarHistorial();
+</script>
+
 </body>
+<style>
+
+#recientesClases {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 25px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+#recientesClases .tarjeta {
+  display: inline-block !important;
+  width: 200px !important;
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  padding: 10px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+#recientesClases .tarjeta:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
+}
+
+#recientesClases .tarjeta img {
+  width: 100% !important;
+  height: 120px !important;
+  object-fit: contain !important;
+  border-radius: 10px !important;
+}
+
+#recientesClases .tarjeta h3 {
+  color: #00bfff !important;
+  margin-top: 8px !important;
+  font-size: 16px !important;
+}
+</style>
 </html>

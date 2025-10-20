@@ -4,7 +4,7 @@
     <link rel="shortcut icon" href="Digiknow.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digiknow</title>
+    <title>Inglés</title>
     <link rel="stylesheet" href="style.css">
     <style>
         h1 {
@@ -41,5 +41,19 @@
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+const STORAGE_KEY = "digiknow_recientes_clases";
+const titulo = document.title;
+const url = location.href;
+
+let historial = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+historial = historial.filter(p => p.url !== url);
+
+historial.unshift({ titulo, url });
+
+localStorage.setItem(STORAGE_KEY, JSON.stringify(historial.slice(0, 3)));
+</script>
+
 </body>
 </html>

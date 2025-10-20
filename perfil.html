@@ -14,6 +14,43 @@
         p {
             color: #ffffff;
         }
+
+        .contenedor {
+      background: white;
+      width: 300px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0099ff;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    label {
+      display: inline-block;
+      background-color: #0099ff;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
     </style>
 </head>
 <body>
@@ -42,6 +79,33 @@
     </header>
     
    <h1>Perfil</h1>
+    <div class="contenedor">
+    <h2>Selecciona tu foto de perfil</h2>
+    <img id="preview" src="img/default.png" alt="Foto de perfil">
+    <br>
+    <div class="imgp">
+    <input type="file" id="fotoInput" accept="image/*"></div>
+    <label for="fotoInput">Elegir foto</label>
+    <button id="guardarBtn">Guardar foto</button>
+  </div>
+
+  <script>
+    const input = document.getElementById("fotoInput");
+    const preview = document.getElementById("preview");
+
+    input.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => preview.src = e.target.result;
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById("guardarBtn").addEventListener("click", () => {
+      alert("Foto de perfil guardada (solo en memoria).");
+    });
+  </script>
 <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
