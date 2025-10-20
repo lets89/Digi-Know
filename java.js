@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("JS cargado ");
+  console.log("JS cargado");
 
+  // --- Registro ---
   const registroForm = document.getElementById("registroform");
   if (registroForm) {
-    registroForm.addEventListener("submit", async function(event) {
+    registroForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
       const Usuario = document.getElementById("Usuario").value.trim();
@@ -29,13 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify({ Usuario, Correo, Contraseña })
         });
 
-        const text = await response.text();
-        alert(text);
-
+        const data = await response.json();
         if (response.ok) {
+          // ✅ Guardar nombre en localStorage
+          localStorage.setItem("usuario_actual", data.Usuario);
+          alert("Registro exitoso");
           window.location.href = "Inicio.html";
         } else {
-          errorMsg.textContent = text;
+          errorMsg.textContent = data.mensaje;
         }
       } catch (error) {
         errorMsg.textContent = "Error de conexión con el servidor.";
@@ -44,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Login ---
   const loginForm = document.getElementById("sesionform");
   if (loginForm) {
-    loginForm.addEventListener("submit", async function(event) {
+    loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
-      console.log("Intentando iniciar sesión...");
 
       const Usuario = document.getElementById("Usuario").value.trim();
       const Contraseña = document.getElementById("Contraseña").value.trim();
@@ -66,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify({ Usuario, Contraseña })
         });
 
-        const text = await response.text();
-        console.log("Respuesta del servidor:", text);
-
+        const data = await response.json();
         if (response.ok) {
-          alert("Inicio de sesión exitoso ");
+          // ✅ Guardar nombre en localStorage
+          localStorage.setItem("usuario_actual", data.Usuario);
+          alert("Inicio de sesión exitoso");
           window.location.href = "Inicio.html";
         } else {
-          errorMsg.textContent = text;
+          errorMsg.textContent = data.mensaje;
         }
       } catch (error) {
         errorMsg.textContent = "Error de conexión con el servidor.";

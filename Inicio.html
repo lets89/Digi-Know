@@ -46,7 +46,7 @@
     </header>
     
    <h1>Inicio</h1>
-   <h1>¡Bienbenido!</h1> 
+   <h1>¡Bienbenido, <span id="Usuario"></span>!</h1> 
 <div class="reciente">
 <h2>Recientes</h2>
 </div>
@@ -60,6 +60,24 @@
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
    <script>
+     const nombre = localStorage.getItem("usuario_actual");
+
+  if (nombre) {
+    document.getElementById("Usuario").textContent = nombre;
+  } else {
+    document.getElementById("Usuario").textContent = "";
+  }
+    const usuarioActual = "";
+
+  fetch(`http://localhost:3000/usuario/${usuarioActual}`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("Usuario").textContent = data.Usuario;
+    })
+    .catch(err => {
+      console.error("Error al obtener el nombre:", err);
+    });
+
 const STORAGE_KEY = "digiknow_recientes_clases";
 const IMAGENES_CLASES = {
   "matematica.html": "Matematica.png",

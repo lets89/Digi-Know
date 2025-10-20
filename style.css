@@ -310,6 +310,21 @@ p {
   
 }
 
+.cla ul :hover{
+  color: #868484;
+  transform: scale(1.01);
+}
+
+.contenedorin {
+  margin: 50px 150px;
+  background: #4b3727;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  font-size: 25px;
+}
+
+
 .boma {
  background-color: #ffffff; 
       color: #2b1f16; 
