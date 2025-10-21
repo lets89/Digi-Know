@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("JS cargado");
 
-  // --- Registro ---
+  
   const registroForm = document.getElementById("registroform");
   if (registroForm) {
     registroForm.addEventListener("submit", async function (event) {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const data = await response.json();
         if (response.ok) {
-          // ✅ Guardar nombre en localStorage
+        
           localStorage.setItem("usuario_actual", data.Usuario);
           alert("Registro exitoso");
           window.location.href = "Inicio.html";
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Login ---
+  
   const loginForm = document.getElementById("sesionform");
   if (loginForm) {
     loginForm.addEventListener("submit", async function (event) {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const data = await response.json();
         if (response.ok) {
-          // ✅ Guardar nombre en localStorage
+
           localStorage.setItem("usuario_actual", data.Usuario);
           alert("Inicio de sesión exitoso");
           window.location.href = "Inicio.html";
