@@ -42,9 +42,129 @@
             </div>
         </div>
     </header>
+    <h1>Clase 12: Repaso general.</h1>
+
+  <h2>Objetivo</h2>
+  <p>Aplicar todos los conocimientos en una prueba.</p>
+
+  <form>
+    <fieldset>
+      <legend>1. Presentación personal</legend>
+      <label for="name">What’s your name?</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="origin">Where are you from?</label><br>
+      <input type="text" id="origin" name="origin"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Pronombres y verbo “to be”</legend>
+      <label>Choose the correct form:</label><br>
+      <select name="toBe1">
+        <option value="">I ___ a student.</option>
+        <option value="am">am</option>
+        <option value="is">is</option>
+        <option value="are">are</option>
+      </select><br><br>
+
+      <select name="toBe2">
+        <option value="">They ___ happy.</option>
+        <option value="is">is</option>
+        <option value="are">are</option>
+        <option value="am">am</option>
+      </select><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Artículos y sustantivos</legend>
+      <label>Complete:</label><br>
+      <input type="text" name="article1" placeholder="I have ___ apple"><br><br>
+      <input type="text" name="article2" placeholder="She has ___ book"><br><br>
+      <input type="text" name="article3" placeholder="___ dogs are big"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Adjetivos y colores</legend>
+      <label>Describe an object near you:</label><br>
+      <input type="text" name="objectDescription" placeholder="e.g. I have a red pen"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Verbo “have / has”</legend>
+      <label>Write two sentences:</label><br>
+      <textarea name="haveHasSentences" rows="3" cols="50" placeholder="e.g. I have a dog. She has a bike."></textarea><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Números y fechas</legend>
+      <label for="date">Write today’s date:</label><br>
+      <input type="text" id="date" name="date" placeholder="e.g. October 21st"><br><br>
+
+      <label for="age">How old are you?</label><br>
+      <input type="number" id="age" name="age"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. Familia</legend>
+      <label>Describe one family member:</label><br>
+      <input type="text" name="familyMember" placeholder="e.g. This is my sister. Her name is Ana."><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. La casa</legend>
+      <label>Describe your room:</label><br>
+      <textarea name="roomDescription" rows="3" cols="50"></textarea><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>9. Rutina diaria</legend>
+      <label>Write 3 daily actions:</label><br>
+      <textarea name="dailyRoutine" rows="3" cols="50" placeholder="e.g. I wake up at 7. I eat breakfast. I go to school."></textarea><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>10. Comida y bebida</legend>
+      <label>What do you like?</label><br>
+      <input type="text" name="likes" placeholder="e.g. I like apples."><br><br>
+
+      <label>What don’t you like?</label><br>
+      <input type="text" name="dislikes" placeholder="e.g. I don’t like milk."><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>11. Direcciones</legend>
+      <label>Write a direction:</label><br>
+      <input type="text" name="direction" placeholder="e.g. The bank is next to the school."><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>12. Proyecto final</legend>
+      <label>All About Me:</label><br>
+      <textarea name="finalProject" rows="5" cols="60" placeholder="My name is ___. I live in ___. I like ___. My favorite food is ___. My family is ___. Every day I ___." required></textarea><br><br>
+    </fieldset>
+
+    <input type="submit" value="Enviar respuestas">
+  </form>
+    <button onclick="completarClase(12)">Finalizar</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inglesfin.html`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 12; 
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+</script>
+
 </body>
 </html>

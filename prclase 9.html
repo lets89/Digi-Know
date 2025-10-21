@@ -42,9 +42,56 @@
             </div>
         </div>
     </header>
+
+  <h1>Clase 9: Entrada y salida de datos</h1>
+
+  <h2>Objetivo</h2>
+  <p>Aprender a interactuar con el usuario mediante funciones de entrada y salida.</p>
+
+  <h2>Temas</h2>
+  <h3>Funciones en JavaScript</h3>
+  <ul>
+    <li><strong>prompt():</strong> solicita información al usuario</li>
+    <li><strong>alert():</strong> muestra un mensaje emergente</li>
+    <li><strong>console.log():</strong> imprime en la consola</li>
+  </ul>
+
+  <h3>Ejemplo</h3>
+  <pre>
+let nombre = prompt("¿Cuál es tu nombre?");
+alert("Bienvenido, " + nombre);
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Pide al usuario su edad y muestra un mensaje según si es mayor o menor de edad:</p>
+  <pre>
+let edad = prompt("Ingresa tu edad:");
+if (edad >= 18) {
+  alert("Eres mayor de edad");
+} else {
+  alert("Eres menor de edad");
+}
+  </pre>
+     <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

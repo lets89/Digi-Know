@@ -42,9 +42,55 @@
             </div>
         </div>
     </header>
+    <h1>Clase 8: Objetos</h1>
+
+  <h2>Objetivo</h2>
+  <p>Entender cómo agrupar datos relacionados usando objetos en JavaScript.</p>
+
+  <h2>Temas</h2>
+  <h3>¿Qué es un objeto?</h3>
+  <p>Es una estructura que permite almacenar múltiples valores relacionados mediante pares clave:valor.</p>
+
+  <h3>Sintaxis básica</h3>
+  <pre>
+let persona = {
+  nombre: "Luis",
+  edad: 16,
+  carrera: "Informática"
+};
+console.log(persona.nombre);
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Crea un objeto llamado <code>auto</code> con las propiedades marca, modelo y color:</p>
+  <pre>
+let auto = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  color: "Rojo"
+};
+console.log(auto.marca);
+  </pre>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

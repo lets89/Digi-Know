@@ -42,9 +42,47 @@
             </div>
         </div>
     </header>
+     <h1>Clase 10: Ecuaciones de primer grado</h1>
+
+  <h2>Objetivo</h2>
+  <p>Resolver ecuaciones con una incógnita mediante el despeje de variables.</p>
+
+  <h2>Temas</h2>
+  <h3>Igualdades y despeje</h3>
+  <p>Una ecuación es una igualdad con una incógnita. Para resolverla, se debe aislar la variable.</p>
+
+  <h3>Ejemplos</h3>
+  <ul>
+    <li>2x + 3 = 9 → x = 3</li>
+    <li>4a ÷ 2 + 3 = 11 → a = 4</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>5x - 10 = 15 → x = ______</li>
+    <li>3y + 7 = 19 → y = ______</li>
+    <li>4a ÷ 2 + 3 = 11 → a = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

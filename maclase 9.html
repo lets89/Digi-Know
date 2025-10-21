@@ -42,9 +42,48 @@
             </div>
         </div>
     </header>
+     <h1>Clase 9: Expresiones algebraicas</h1>
+
+  <h2>Objetivo</h2>
+  <p>Introducir el uso de letras para representar números y simplificar expresiones.</p>
+
+  <h2>Temas</h2>
+  <h3>Variables y términos algebraicos</h3>
+  <p>Las letras como x, y, a, b representan números desconocidos o cambiantes.</p>
+
+  <h3>Suma y resta de monomios</h3>
+  <p>Se combinan los términos semejantes (los que tienen la misma variable).</p>
+  <ul>
+    <li>3x + 2x = 5x</li>
+    <li>4a - 2a = 2a</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>Simplifica: 4a + 3a - 2a = ______</li>
+    <li>Simplifica: 5x - 3x + 2x = ______</li>
+    <li>Evalúa si x = 2: 3x + 4 = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

@@ -32,6 +32,10 @@ body {
     justify-content: space-between;
 }
 
+h2,h3 {
+  color: #ffffff;
+  margin: 80px 0 0 100px;
+}
 
 .menu .navbar ul li {
     position: relative;
@@ -453,4 +457,9 @@ p {
         justify-items: center;
       }
       .tarjeta { width: 100%; max-width: 260px; flex: 0 0 auto; }
+    }
+
+    .bloqueado {
+  pointer-events: none;
+  opacity: 0.5;
     }

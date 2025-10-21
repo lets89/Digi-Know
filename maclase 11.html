@@ -42,9 +42,59 @@
             </div>
         </div>
     </header>
+    <h1>Clase 11: Figuras geométricas básicas</h1>
+
+  <h2>Objetivo</h2>
+  <p>Reconocer figuras planas y calcular perímetro y área.</p>
+
+  <h2>Temas</h2>
+  <h3>Figuras</h3>
+  <ul>
+    <li>Triángulo</li>
+    <li>Cuadrado</li>
+    <li>Rectángulo</li>
+    <li>Círculo</li>
+  </ul>
+
+  <h3>Fórmulas</h3>
+  <ul>
+    <li>Área del rectángulo = base × altura</li>
+    <li>Área del círculo = π × r²</li>
+    <li>Perímetro del cuadrado = 4 × lado</li>
+  </ul>
+
+  <h3>Ejemplos</h3>
+  <ul>
+    <li>Área del rectángulo 5×3 = 15</li>
+    <li>Área del círculo radio 3: π × 3² = 28.27</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>Calcula el área de un cuadrado de lado 5 cm = ______</li>
+    <li>Área de un círculo de radio 3 cm = ______</li>
+    <li>Perímetro de un triángulo de lados 3, 4, 5 = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

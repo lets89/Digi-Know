@@ -42,9 +42,77 @@
             </div>
         </div>
     </header>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clase 4: Condicionales (if, else)</title>
+</head>
+<body>
+  <h1>Clase 4: Condicionales (if, else)</h1>
+
+  <h2>Objetivo</h2>
+  <p>Tomar decisiones dentro del código usando estructuras condicionales.</p>
+
+  <h2>Temas</h2>
+  <h3>Estructura condicional</h3>
+  <p>Permite ejecutar diferentes bloques de código según una condición.</p>
+  <ul>
+    <li><strong>if</strong>: si se cumple la condición</li>
+    <li><strong>else</strong>: si no se cumple</li>
+    <li><strong>else if</strong>: para evaluar condiciones adicionales</li>
+  </ul>
+
+  <h3>Operadores de comparación</h3>
+  <ul>
+    <li><strong>></strong> mayor que</li>
+    <li><strong><</strong> menor que</li>
+    <li><strong>==</strong> igual</li>
+    <li><strong>!=</strong> diferente</li>
+  </ul>
+
+  <h3>Ejemplo en JavaScript</h3>
+  <pre>
+let edad = 18;
+if (edad >= 18) {
+  console.log("Eres mayor de edad");
+} else {
+  console.log("Eres menor de edad");
+}
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Escribe un programa que diga si un número es positivo, negativo o cero:</p>
+  <pre>
+let numero = 5;
+if (numero > 0) {
+  console.log("Positivo");
+} else if (numero < 0) {
+  console.log("Negativo");
+} else {
+  console.log("Cero");
+}
+  </pre>
+     <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

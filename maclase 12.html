@@ -42,9 +42,51 @@
             </div>
         </div>
     </header>
+    <h1>Clase 12: Medidas y resolución de problemas</h1>
+
+  <h2>Objetivo</h2>
+  <p>Aplicar las operaciones matemáticas en situaciones cotidianas usando unidades de medida.</p>
+
+  <h2>Temas</h2>
+  <h3>Unidades de medida</h3>
+  <ul>
+    <li>Longitud: metros (m), centímetros (cm)</li>
+    <li>Masa: kilogramos (kg), gramos (g)</li>
+    <li>Capacidad: litros (L), mililitros (ml)</li>
+    <li>Tiempo: horas (h), minutos (min), segundos (s)</li>
+  </ul>
+
+  <h3>Problemas de la vida real</h3>
+  <ul>
+    <li>1 kg de arroz cuesta $2.50 → 3.5 kg = 2.5 × 3.5 = $8.75</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>Si 1 L de jugo cuesta $1.20, ¿cuánto cuestan 4.5 L? = ______</li>
+    <li>Una cinta mide 2.5 m, se corta en 5 partes iguales. ¿Cuánto mide cada parte? = ______</li>
+    <li>María corre 3 km cada día, ¿cuántos km corre en 7 días? = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

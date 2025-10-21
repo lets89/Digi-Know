@@ -42,9 +42,78 @@
             </div>
         </div>
     </header>
+      <h1>Clase 11: Lugares y direcciones</h1>
+
+  <h2>Objetivo</h2>
+  <p>Aprender a pedir y dar direcciones en inglés.</p>
+
+  <h2>Temas</h2>
+  <h3>Lugares en la ciudad</h3>
+  <ul>
+    <li>school – escuela</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Sch')">
+    <audio id="Sch" src="Sch.m4a"></audio>
+    <li>bank – banco</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Ban')">
+    <audio id="Ban" src="Ban.m4a"></audio>
+    <li>park – parque</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Par')">
+    <audio id="Par" src="Par.m4a"></audio>
+    <li>supermarket – supermercado</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Sup')">
+    <audio id="Sup" src="Sup.m4a"></audio>
+    <li>hospital – hospital</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Hos')">
+    <audio id="Hos" src="Hos.m4a"></audio>
+  </ul>
+
+  <h3>Preposiciones de lugar</h3>
+  <ul>
+    <li>in – en</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('In')">
+    <audio id="In" src="In.m4a"></audio>
+    <li>on – sobre</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('On')">
+    <audio id="On" src="On.m4a"></audio>
+    <li>under – debajo</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Und')">
+    <audio id="Und" src="Und.m4a"></audio>
+    <li>between – entre</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Bet')">
+    <audio id="Bet" src="Bet.m4a"></audio>
+    <li>next to – al lado de</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Next')">
+    <audio id="Next" src="Next.m4a"></audio>
+  </ul>
+
+  <h3>Preguntar y dar direcciones</h3>
+  <ul>
+    <li>Where is the bank?</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Dej1')">
+    <audio id="Dej1" src="Dej1.m4a"></audio>
+    <li>It’s next to the school.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Dej2')">
+    <audio id="Dej2" src="Dej2.m4a"></audio>
+    <li>The supermarket is between the park and the hospital.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Dej3')">
+    <audio id="Dej3" src="Dej3.m4a"></audio>
+  </ul>
+
+  <h2>Práctica</h2>
+  <p>Dibuja un mapa con lugares y escribe tres oraciones dando direcciones.</p>
+    <button onclick="completarClase(11)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+     function reproducirSonido(letra) {
+    const sonido = document.getElementById(letra);
+    if (sonido) {
+      sonido.play();
+    }
+  }
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 11; 
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+</script>
+
 </body>
 </html>

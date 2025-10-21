@@ -42,9 +42,76 @@
             </div>
         </div>
     </header>
+    <h1>Clase 7: Familia y amigos</h1>
+
+  <h2>Objetivo</h2>
+  <p>Hablar sobre relaciones familiares y describir personas.</p>
+
+  <h2>Temas</h2>
+  <h3>Miembros de la familia</h3>
+  <ul>
+    <li>mother – madre</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Mot')">
+    <audio id="Mot" src="Mot.m4a"></audio>
+    <li>father – padre</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Fat')">
+    <audio id="Fat" src="Fat.m4a"></audio>
+    <li>sister – hermana</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Sis')">
+    <audio id="Sis" src="Sis.m4a"></audio>
+    <li>brother – hermano</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Bro')">
+    <audio id="Bro" src="Bro.m4a"></audio>
+    <li>grandparents – abuelos</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Gp')">
+    <audio id="Gp" src="Gp.mp4"></audio>
+    <li>uncle – tío</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Unc')">
+    <audio id="Unc" src="Unc.m4a"></audio>
+    <li>aunt – tía</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('aun')">
+    <audio id="aun" src="aun.m4a"></audio>
+    <li>cousin – primo/a</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('cou')">
+    <audio id="cou" src="cou.m4a"></audio>
+  </ul>
+
+  <h3>Describiendo personas</h3>
+  <ul>
+    <li>tall – alto/a</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('tal')">
+    <audio id="tal" src="tal.m4a"></audio>
+    <li>short – bajo/a</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Sho')">
+    <audio id="Sho" src="Sho.m4a"></audio>
+    <li>kind – amable</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Kin')">
+    <audio id="Kin" src="Kin.m4a"></audio>
+    <li>friendly – amigable</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Fri')">
+    <audio id="Fri" src="Fri.m4a"></audio>
+    <li>funny – divertido/a</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Fun')">
+    <audio id="Fun" src="Fun.m4a"></audio>
+  </ul>
+
+  <h2>Práctica</h2>
+  <p>Crea tu árbol genealógico con nombres y relaciones en inglés.</p>
+  <p>Ejemplo:</p>
+  <blockquote>This is my mother. Her name is Ana.</blockquote>
+    <button onclick="completarClase(7)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+     function reproducirSonido(letra) {
+    const sonido = document.getElementById(letra);
+    if (sonido) {
+      sonido.play();
+    }
+  }
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 7; 
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+</script>
+
 </body>
 </html>

@@ -42,9 +42,83 @@
             </div>
         </div>
     </header>
+    <h1>Clase 2: Pronombres personales y verbo “To Be”</h1>
+
+  <h2>Objetivo</h2>
+  <div class="contenedorma"><p>Usar correctamente I, You, He, She, It, We, They con el verbo to be.</p></div>
+
+  <h2>Temas</h2>
+  <p style="font-size: 20px;"><strong>Pronombres personales</strong></p>
+  <div class="contenedorma">
+  <ul>
+    <li>I – yo</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('I')">
+    <audio id="I" src="I.m4a"></audio>
+    <li>You – tú</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('You')">
+    <audio id="You" src="You.m4a"></audio>
+    <li>He – él</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('He')">
+    <audio id="He" src="He.m4a"></audio>
+    <li>She – ella</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('She')">
+    <audio id="She" src="She.m4a"></audio>
+    <li>It – eso</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('It')">
+    <audio id="It" src="It.m4a"></audio>
+    <li>We – nosotros</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('We')">
+    <audio id="We" src="We.m4a"></audio>
+    <li>They – ellos</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('They')">
+    <audio id="They" src="They.m4a"></audio>
+  </ul></div>
+
+  <h3>Verbo “to be”</h3>
+  <div class="contenedorma">
+    <ul>     
+  <li><strong>Afirmativo:</strong> I am, You are, He/She/It is</p><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Affirmative')"></li>
+    <audio id="Affirmative" src="Affirmative.m4a"></audio>
+  <li><strong>Negativo:</strong> I am not, You aren’t, He isn’t</p><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Negative')"></li>
+    <audio id="Negative" src="Negative.m4a"></audio>
+  <li><strong>Preguntas:</strong> Are you happy?</p><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Question')"></li>
+    <audio id="Question" src="Question.m4a"></audio>
+</ul></div>
+  <h3>Ejemplos</h3>
+  <div class="contenedorma">
+  <ul>
+    <li>I am a student.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Afe')">
+    <audio id="Afe" src="Afe.m4a"></audio>
+    <li>You are my friend.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Afe 2')">
+    <audio id="Afe 2" src="Afe 2.m4a"></audio>
+    <li>She is not tired.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Nee')">
+    <audio id="Nee" src="Nee.m4a"></audio>
+    <li>Are they teachers?</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Que')">
+    <audio id="Que" src="Que.m4a"></audio>
+  </ul></div>
+
+  <h2>Práctica</h2>
+  <div class="contenedorma">
+  <p>Escribe 5 oraciones usando <strong>to be</strong> (afirmativas, negativas o preguntas).</p></div>
+    <button onclick="completarClase(2)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+     function reproducirSonido(letra) {
+    const sonido = document.getElementById(letra);
+    if (sonido) {
+      sonido.play();
+    }
+  }
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 2;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `inclase${progreso}.html` || "inclase 1.html";
+  }
+});
+</script>
+
 </body>
 </html>

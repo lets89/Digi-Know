@@ -42,9 +42,53 @@
             </div>
         </div>
     </header>
+    <h1>Clase 6: Potencias y raíces cuadradas</h1>
+
+  <h2>Objetivo</h2>
+  <p>Resolver operaciones con potencias y raíces cuadradas.</p>
+
+  <h2>Temas</h2>
+  <h3>Potencias</h3>
+  <p>Multiplicar un número por sí mismo varias veces.</p>
+  <ul>
+    <li>5² = 5 × 5 = 25</li>
+    <li>3³ = 3 × 3 × 3 = 27</li>
+  </ul>
+
+  <h3>Raíz cuadrada</h3>
+  <p>Es el número que multiplicado por sí mismo da el original.</p>
+  <ul>
+    <li>√49 = 7</li>
+    <li>√81 = 9</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>7² = ______</li>
+    <li>3³ = ______</li>
+    <li>√81 = ______</li>
+    <li>√64 = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

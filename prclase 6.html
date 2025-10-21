@@ -42,9 +42,54 @@
             </div>
         </div>
     </header>
+    <h1>Clase 6: Funciones</h1>
+
+  <h2>Objetivo</h2>
+  <p>Organizar el código en bloques reutilizables mediante funciones.</p>
+
+  <h2>Temas</h2>
+  <h3>Definición de funciones</h3>
+  <p>Una función es un bloque de código que realiza una tarea específica.</p>
+
+  <h3>Parámetros y retorno</h3>
+  <p>Las funciones pueden recibir valores (parámetros) y devolver resultados (return).</p>
+
+  <h3>Ejemplo en JavaScript</h3>
+  <pre>
+function saludar(nombre) {
+  return "Hola, " + nombre + "!";
+}
+console.log(saludar("Luis"));
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Crea una función que calcule el área de un triángulo:</p>
+  <pre>
+function areaTriangulo(base, altura) {
+  return (base * altura) / 2;
+}
+console.log(areaTriangulo(5, 4));
+  </pre>
+     <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

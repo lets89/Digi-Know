@@ -42,9 +42,53 @@
             </div>
         </div>
     </header>
+      <h1>Clase 3: Números enteros y su recta numérica</h1>
+
+  <h2>Objetivo</h2>
+  <p>Identificar y ubicar números enteros en la recta numérica.</p>
+
+  <h2>Temas</h2>
+  <h3>Números positivos y negativos</h3>
+  <p>Los positivos (+) están a la derecha del 0, los negativos (-) a la izquierda.</p>
+
+  <h3>Valor absoluto</h3>
+  <p>Es la distancia del número al 0 en la recta, siempre positiva.</p>
+  <p>Ejemplo: |-5| = 5</p>
+
+  <h3>Ejemplos</h3>
+  <ul>
+    <li>En la recta: -3 está a la izquierda de 0.</li>
+    <li>|-8| = 8</li>
+    <li>|3| = 3</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>Dibuja una recta numérica e indica: -5, -1, 0, 3, 6</li>
+    <li>Calcula valores absolutos:</li>
+    <li>|-8| = ______</li>
+    <li>|3| = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

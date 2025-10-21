@@ -58,6 +58,20 @@
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const links = document.querySelectorAll(".clase-link");
+
+  links.forEach((link, index) => {
+    if (index + 1 > progreso + 1) {
+      link.classList.add("bloqueado");
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        alert("Completa las clases anteriores para desbloquear esta.");
+      });
+    }
+  });
+});
 const STORAGE_KEY = "digiknow_recientes_clases";
 const titulo = document.title;
 const url = location.href;

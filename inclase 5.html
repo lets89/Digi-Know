@@ -42,9 +42,80 @@
             </div>
         </div>
     </header>
+      <h1>Clase 5: Verbo “Have / Has” y posesivos</h1>
+
+  <h2>Objetivo</h2>
+  <p>Expresar posesión usando el verbo <strong>have / has</strong> y los adjetivos posesivos.</p>
+
+  <h2>Temas</h2>
+  <h3>Have / Has</h3>
+  <ul>
+    <li>I, you, we, they → <strong>have</strong></li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Have')">
+    <audio id="Have" src="Have.m4a"></audio>
+    <li>He, she, it → <strong>has</strong></li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Has')">
+    <audio id="Has" src="Has.m4a"></audio>
+  </ul>
+
+  <h3>Adjetivos posesivos</h3>
+  <ul>
+    <li>my – mi</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('My')">
+    <audio id="My" src="My.m4a"></audio>
+    <li>your – tu</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Yor')">
+    <audio id="Yor" src="Yor.m4a"></audio>
+    <li>his – su (de él)</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('His')">
+    <audio id="His" src="His.m4a"></audio>
+    <li>her – su (de ella)</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Her')">
+    <audio id="Her" src="Her.m4a"></audio>
+    <li>its – su (de eso)</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Its')">
+    <audio id="Its" src="Its.m4a"></audio>
+    <li>our – nuestro</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Our')">
+    <audio id="Our" src="Our.m4a"></audio>
+    <li>their – su (de ellos)</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Ther')">
+    <audio id="Ther" src="Ther.m4a"></audio>
+  </ul>
+
+  <h3>Ejemplos</h3>
+  <ul>
+    <li>I have a cat.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Pej1')">
+    <audio id="Pej1" src="Pej1.m4a"></audio>
+    <li>She has a brother.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Pej2')">
+    <audio id="Pej2" src="Pej2.m4a"></audio>
+    <li>Their house is big.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Pej3')">
+    <audio id="Pej3" src="Pej3.m4a"></audio>
+    <li>We have a new teacher.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Pej4')">
+    <audio id="Pej4" src="Pej4.m4a"></audio>
+    <li>He has a red car.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Pej5')">
+    <audio id="Pej5" src="Pej5.m4a"></audio>
+  </ul>
+
+  <h2>Práctica</h2>
+  <p>Escribe 5 oraciones usando <strong>have</strong> y <strong>has</strong>.</p>
+    <button onclick="completarClase(5)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+     function reproducirSonido(letra) {
+    const sonido = document.getElementById(letra);
+    if (sonido) {
+      sonido.play();
+    }
+  }
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 5; 
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+</script>
+
 </body>
 </html>

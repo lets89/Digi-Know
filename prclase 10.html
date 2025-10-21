@@ -42,9 +42,50 @@
             </div>
         </div>
     </header>
+    <h1>Clase 10: Programación en HTML y CSS</h1>
+
+  <h2>Objetivo</h2>
+  <p>Entender cómo se conecta la programación con una página web usando HTML, CSS y JavaScript.</p>
+
+  <h2>Temas</h2>
+  <h3>Estructura básica de HTML</h3>
+  <p>HTML define el contenido de la página.</p>
+
+  <h3>Conexión con JavaScript</h3>
+  <p>JavaScript permite agregar interactividad a los elementos HTML.</p>
+
+  <h3>Ejemplo</h3>
+  <pre>
+&lt;button onclick="saludar()"&gt;Haz clic&lt;/button&gt;
+&lt;script&gt;
+  function saludar() {
+    alert("¡Hola desde JavaScript!");
+  }
+&lt;/script&gt;
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Crea una página que muestre un botón con un mensaje al hacer clic.</p>
+     <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

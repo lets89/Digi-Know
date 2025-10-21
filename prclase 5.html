@@ -42,9 +42,57 @@
             </div>
         </div>
     </header>
+    <h1>Clase 5: Bucles (for y while)</h1>
+
+  <h2>Objetivo</h2>
+  <p>Repetir instrucciones de forma controlada usando bucles.</p>
+
+  <h2>Temas</h2>
+  <h3>Bucles for</h3>
+  <p>Se usa cuando conocemos cuántas veces queremos repetir algo.</p>
+  <pre>
+for (let i = 1; i <= 5; i++) {
+  console.log("Iteración:", i);
+}
+  </pre>
+
+  <h3>Bucles while</h3>
+  <p>Se usa cuando la condición determina cuándo detenerse.</p>
+  <pre>
+let i = 1;
+while (i <= 5) {
+  console.log("Iteración:", i);
+  i++;
+}
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Crea un bucle que muestre los números del 1 al 10:</p>
+  <pre>
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+  </pre>
+     <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

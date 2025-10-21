@@ -42,9 +42,71 @@
             </div>
         </div>
     </header>
+      <h1>Clase 9: Rutina diaria y presente simple</h1>
+
+  <h2>Objetivo</h2>
+  <p>Expresar acciones cotidianas usando el presente simple.</p>
+
+  <h2>Temas</h2>
+  <h3>Presente simple</h3>
+  <p>Para <strong>He / She / It</strong> se añade “-s” al verbo.</p>
+  <ul>
+    <li>He eats</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Spre1')">
+    <audio id="Spre1" src="Spre1.m4a"></audio>
+    <li>She plays</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Spre2')">
+    <audio id="Spre2" src="Spre2.m4a"></audio>
+  </ul>
+
+  <h3>Adverbios de frecuencia</h3>
+  <ul>
+    <li>always – siempre</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Alw')">
+    <audio id="Alw" src="Alw.m4a"></audio>
+    <li>usually – usualmente</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Usu')">
+    <audio id="Usu" src="Usu.m4a"></audio>
+    <li>sometimes – a veces</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Som')">
+    <audio id="Som" src="Som.m4a"></audio>
+    <li>never – nunca</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Nev')">
+    <audio id="Nev" src="Nev.m4a"></audio>
+  </ul>
+
+  <h3>Ejemplos</h3>
+  <ul>
+    <li>I get up at 7 o’clock.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Spej1')">
+    <audio id="Spej1" src="Spej1.m4a"></audio>
+    <li>She doesn’t like coffee.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Spej2')">
+    <audio id="Spej2" src="Spej2.m4a"></audio>
+    <li>Do you study English?</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Spej3')">
+    <audio id="Spej3" src="Spej3.m4a"></audio>
+  </ul>
+
+  <h2>Práctica</h2>
+  <p>Escribe tu rutina diaria en inglés (mínimo 5 oraciones).
+    <button onclick="completarClase(9)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+     function reproducirSonido(letra) {
+    const sonido = document.getElementById(letra);
+    if (sonido) {
+      sonido.play();
+    }
+  }
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 9; 
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+</script>
+
 </body>
 </html>

@@ -42,9 +42,55 @@
             </div>
         </div>
     </header>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clase 4: Fracciones y Decimales</title>
+</head>
+<body>
+  <h1>Clase 4: Fracciones y decimales</h1>
+
+  <h2>Objetivo</h2>
+  <p>Comprender el concepto de fracción y su relación con los decimales.</p>
+
+  <h2>Temas</h2>
+  <h3>Fracción como parte de un todo</h3>
+  <p>Una fracción representa una parte de un total. Ejemplo: ½ representa 1 parte de 2 iguales.</p>
+
+  <h3>Equivalencia fracción-decimal</h3>
+  <p>Se puede convertir dividiendo el numerador entre el denominador.</p>
+  <ul>
+    <li>½ = 0.5</li>
+    <li>¾ = 0.75</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>Convierte en decimal: ⅖ = ______</li>
+    <li>Convierte en decimal: ⅞ = ______</li>
+    <li>Escribe en fracción: 0.25 = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

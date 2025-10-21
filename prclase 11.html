@@ -42,9 +42,57 @@
             </div>
         </div>
     </header>
+
+  <h1>Clase 11: Manejo básico del DOM</h1>
+
+  <h2>Objetivo</h2>
+  <p>Modificar elementos HTML con JavaScript usando el DOM.</p>
+
+  <h2>Temas</h2>
+  <h3>¿Qué es el DOM?</h3>
+  <p>Es la representación estructurada de una página web que JavaScript puede modificar.</p>
+
+  <h3>Métodos comunes</h3>
+  <ul>
+    <li><code>getElementById</code>: selecciona un elemento por su ID</li>
+    <li><code>innerText</code>: cambia el texto del elemento</li>
+    <li><code>value</code>: obtiene el valor de un input</li>
+  </ul>
+
+  <h3>Ejemplo</h3>
+  <pre>
+&lt;p id="mensaje"&gt;&lt;/p&gt;
+&lt;button onclick="mostrarMensaje()"&gt;Mostrar&lt;/button&gt;
+
+&lt;script&gt;
+  function mostrarMensaje() {
+    document.getElementById("mensaje").innerText = "¡Hola Mundo!";
+  }
+&lt;/script&gt;
+  </pre>
+
+  <h2>Práctica</h2>
+  <p>Crea un formulario que muestre el nombre ingresado en pantalla.</p>
+     <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>

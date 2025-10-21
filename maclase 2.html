@@ -42,9 +42,61 @@
             </div>
         </div>
     </header>
+    <h1>Clase 2: Propiedades de las operaciones</h1>
+
+  <h2>Objetivo</h2>
+  <p>Comprender las propiedades conmutativa, asociativa y distributiva.</p>
+
+  <h2>Temas</h2>
+  <h3>Propiedad conmutativa</h3>
+  <p>El orden no cambia el resultado.</p>
+  <ul>
+    <li>Suma: a + b = b + a</li>
+    <li>Multiplicación: a × b = b × a</li>
+  </ul>
+
+  <h3>Propiedad asociativa</h3>
+  <p>La agrupación no cambia el resultado.</p>
+  <ul>
+    <li>Suma: (a + b) + c = a + (b + c)</li>
+    <li>Multiplicación: (a × b) × c = a × (b × c)</li>
+  </ul>
+
+  <h3>Propiedad distributiva</h3>
+  <p>Multiplicar un número por una suma es igual a multiplicar por cada término y luego sumar.</p>
+  <p>a × (b + c) = a × b + a × c</p>
+
+  <h3>Ejemplos</h3>
+  <ul>
+    <li>2 × (3 + 4) = 2×3 + 2×4 = 6 + 8 = 14</li>
+    <li>(4 + 6) + 5 = 4 + (6 + 5) = 15</li>
+  </ul>
+
+  <h2>Práctica</h2>
+  <ul>
+    <li>Aplica la propiedad distributiva: 5 × (2 + 3) = ______</li>
+    <li>Aplica la propiedad asociativa: (4 + 6) + 5 = ______</li>
+  </ul>
+    <button onclick="completarClase(1)">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
+  <script>
+    function completarClase(numero) {
+  localStorage.setItem("claseCompletada", numero);
+  window.location.href = `inclase ${numero + 1}.html`;
+}
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const claseActual = 1;
+  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+
+  if (progreso < claseActual - 1) {
+    alert("Debes completar la clase anterior antes de acceder a esta.");
+    window.location.href = `clase${progreso}.html` || "ingles.html";
+  }
+});
+  </script>
 </body>
 </html>
