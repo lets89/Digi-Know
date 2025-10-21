@@ -85,7 +85,7 @@
   <script>
     function completarClase(numero) {
   localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+  window.location.href = `maclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
@@ -94,7 +94,7 @@
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "matematica.html";
   }
 });
   </script>
