@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -46,21 +49,21 @@
   <h1>Clase 2: Variables y tipos de datos</h1>
 
   <h2>Objetivo</h2>
-  <p>Aprender a declarar y usar variables.</p>
+  <div class="contenedorma"><p>Aprender a declarar y usar variables.</p></div>
 
   <h2>Temas</h2>
   <h3>¿Qué es una variable?</h3>
-  <p>Es un espacio en memoria con un nombre que almacena un valor.</p>
+  <div class="contenedorma"><p>Es un espacio en memoria con un nombre que almacena un valor.</p></div>
 
   <h3>Tipos de datos</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li><strong>Número:</strong> 15, 3.14</li>
     <li><strong>Texto (string):</strong> "Luis"</li>
     <li><strong>Booleano:</strong> true / false</li>
-  </ul>
+  </ul></div>
 
   <h3>Ejemplo en JavaScript</h3>
-  <pre>
+<div class="contenedorma">  <pre>
 let nombre = "Luis";
 let edad = 15;
 let estudiante = true;
@@ -68,28 +71,28 @@ let estudiante = true;
 console.log(nombre);
 console.log(edad);
 console.log(estudiante);
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Declara 3 variables con tus datos personales y muéstralas en consola.</p>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  <div class="contenedorma"><p>Declara 3 variables con tus datos personales y muéstralas en consola.</p></div>
+    <button onclick="completarClasepr(2)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 2;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

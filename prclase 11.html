@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -46,21 +49,21 @@
   <h1>Clase 11: Manejo básico del DOM</h1>
 
   <h2>Objetivo</h2>
-  <p>Modificar elementos HTML con JavaScript usando el DOM.</p>
+ <div class="contenedorma"> <p>Modificar elementos HTML con JavaScript usando el DOM.</p></div>
 
   <h2>Temas</h2>
   <h3>¿Qué es el DOM?</h3>
-  <p>Es la representación estructurada de una página web que JavaScript puede modificar.</p>
+ <div class="contenedorma"> <p>Es la representación estructurada de una página web que JavaScript puede modificar.</p></div>
 
   <h3>Métodos comunes</h3>
-  <ul>
+ <div class="contenedorma"> <ul>
     <li><code>getElementById</code>: selecciona un elemento por su ID</li>
     <li><code>innerText</code>: cambia el texto del elemento</li>
     <li><code>value</code>: obtiene el valor de un input</li>
-  </ul>
+  </ul></div>
 
   <h3>Ejemplo</h3>
-  <pre>
+ <div class="contenedorma"> <pre>
 &lt;p id="mensaje"&gt;&lt;/p&gt;
 &lt;button onclick="mostrarMensaje()"&gt;Mostrar&lt;/button&gt;
 
@@ -69,28 +72,28 @@
     document.getElementById("mensaje").innerText = "¡Hola Mundo!";
   }
 &lt;/script&gt;
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Crea un formulario que muestre el nombre ingresado en pantalla.</p>
-     <button onclick="completarClase(1)">Siguiente clase</button>
+ <div class="contenedorma"> <p>Crea un formulario que muestre el nombre ingresado en pantalla.</p></div>
+     <button onclick="completarClasepr(11)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 11;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

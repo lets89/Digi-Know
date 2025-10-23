@@ -45,46 +45,46 @@
     <h1>Clase 12: Medidas y resolución de problemas</h1>
 
   <h2>Objetivo</h2>
-  <p>Aplicar las operaciones matemáticas en situaciones cotidianas usando unidades de medida.</p>
+  <div class="contenedorma"><p>Aplicar las operaciones matemáticas en situaciones cotidianas usando unidades de medida.</p></div>
 
   <h2>Temas</h2>
   <h3>Unidades de medida</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>Longitud: metros (m), centímetros (cm)</li>
     <li>Masa: kilogramos (kg), gramos (g)</li>
     <li>Capacidad: litros (L), mililitros (ml)</li>
     <li>Tiempo: horas (h), minutos (min), segundos (s)</li>
-  </ul>
+  </ul></div>
 
   <h3>Problemas de la vida real</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>1 kg de arroz cuesta $2.50 → 3.5 kg = 2.5 × 3.5 = $8.75</li>
-  </ul>
+  </ul></div>
 
   <h2>Práctica</h2>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>Si 1 L de jugo cuesta $1.20, ¿cuánto cuestan 4.5 L? = ______</li>
     <li>Una cinta mide 2.5 m, se corta en 5 partes iguales. ¿Cuánto mide cada parte? = ______</li>
     <li>María corre 3 km cada día, ¿cuántos km corre en 7 días? = ______</li>
-  </ul>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </ul></div>
+    <button onclick="completarClasema(12)"class="boma">Finalizar</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasema(numero) {
+  localStorage.setItem("claseCompletadama", numero);
+  window.location.href = `matematicafin.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 12;
+  const progreso = parseInt(localStorage.getItem("claseCompletadama")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "matematica.html";
   }
 });
   </script>

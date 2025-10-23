@@ -46,47 +46,47 @@
   <h1>Clase 1: Introducción a la Programación</h1>
 
   <h2>Objetivo</h2>
-  <p>Comprender qué es programar y para qué sirve.</p>
+  <div class="contenedorma"><p>Comprender qué es programar y para qué sirve.</p></div>
 
   <h2>Temas</h2>
   <h3>¿Qué es un programa?</h3>
-  <p>Es un conjunto de instrucciones que una computadora sigue para realizar tareas.</p>
+  <div class="contenedorma"><p>Es un conjunto de instrucciones que una computadora sigue para realizar tareas.</p></div>
 
   <h3>Lenguajes de programación</h3>
-  <p>Python, JavaScript, C++, Java… Cada uno tiene su sintaxis y usos.</p>
+  <div class="contenedorma"><p>Python, JavaScript, C++, Java… Cada uno tiene su sintaxis y usos.</p></div>
 
   <h3>Algoritmos y lógica</h3>
-  <p>Secuencia de pasos ordenados para resolver un problema.</p>
+  <div class="contenedorma"><p>Secuencia de pasos ordenados para resolver un problema.</p></div>
 
   <h3>Ejemplo de algoritmo</h3>
-  <p>Preparar un sándwich:</p>
+ <div class="contenedorma"><p>Preparar un sándwich:</p>
   <ol>
     <li>Toma dos rebanadas de pan.</li>
     <li>Unta mantequilla en ambas.</li>
     <li>Coloca jamón y queso.</li>
     <li>Junta las rebanadas y corta por la mitad.</li>
-  </ol>
+  </ol></div> 
 
   <h2>Práctica</h2>
-  <p>Escribe un algoritmo para lavarte las manos usando pasos numerados.</p>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  <div class="contenedorma"><p>Escribe un algoritmo para lavarte las manos usando pasos numerados.</p></div>
+    <button onclick="completarClasepr(1)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
   const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

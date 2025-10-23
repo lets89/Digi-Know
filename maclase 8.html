@@ -45,42 +45,42 @@
      <h1>Clase 8: Proporciones y porcentajes</h1>
 
   <h2>Objetivo</h2>
-  <p>Resolver problemas de proporciones y porcentajes.</p>
+  <div class="contenedorma"><p>Resolver problemas de proporciones y porcentajes.</p></div>
 
   <h2>Temas</h2>
   <h3>Regla de tres</h3>
-  <p>Permite relacionar proporciones para encontrar un valor desconocido.</p>
+  <div class="contenedorma"><p>Permite relacionar proporciones para encontrar un valor desconocido.</p></div>
 
   <h3>Porcentaje y conversión decimal</h3>
-  <p>Para convertir un porcentaje a decimal: % ÷ 100</p>
+  <div class="contenedorma"><p>Para convertir un porcentaje a decimal: % ÷ 100</p>
   <ul>
     <li>25% de 200 = 0.25 × 200 = 50</li>
-  </ul>
+  </ul></div>
 
   <h2>Práctica</h2>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>Calcula el 15% de 80 = ______</li>
     <li>Si 3 lápices cuestan $6, ¿cuánto cuestan 10? = ______</li>
     <li>Un producto tiene 20% de descuento, precio original $50. ¿Precio final? = ______</li>
-  </ul>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </ul></div>
+    <button onclick="completarClasema(8)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasema(numero) {
+  localStorage.setItem("claseCompletadama", numero);
+  window.location.href = `maclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 8;
+  const progreso = parseInt(localStorage.getItem("claseCompletadama")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "matematica.html";
   }
 });
   </script>

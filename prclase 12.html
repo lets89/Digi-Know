@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -45,52 +48,52 @@
   <h1>Clase 12: Proyecto final</h1>
 
   <h2>Objetivo</h2>
-  <p>Aplicar todos los conocimientos adquiridos en un proyecto completo.</p>
+  <div class="contenedorma"><p>Aplicar todos los conocimientos adquiridos en un proyecto completo.</p></div>
 
   <h2>Temas</h2>
   <h3>Planificación y codificación</h3>
-  <p>Define el propósito, estructura y funcionalidades del proyecto.</p>
+  <div class="contenedorma"><p>Define el propósito, estructura y funcionalidades del proyecto.</p></div>
 
   <h3>Diseño básico con HTML, CSS y JS</h3>
-  <ul>
+ <div class="contenedorma"> <ul>
     <li>HTML: estructura del contenido</li>
     <li>CSS: estilos visuales</li>
     <li>JavaScript: interactividad y lógica</li>
-  </ul>
+  </ul></div>
 
   <h3>Ejemplo de proyecto</h3>
-  <p><strong>Registro de usuarios</strong></p>
+  <div class="contenedorma"><p><strong>Registro de usuarios</strong></p>
   <ul>
     <li>Formulario con campos de nombre y edad</li>
     <li>Estilos básicos para botones y campos</li>
     <li>Validación y mensaje final con JavaScript</li>
-  </ul>
+  </ul></div>
 
   <h2>Práctica</h2>
-  <p>Desarrolla tu propio mini proyecto. Algunas ideas:</p>
+ <div class="contenedorma"> <p>Desarrolla tu propio mini proyecto. Algunas ideas:</p>
   <ul>
     <li>Calculadora</li>
     <li>Lista de tareas</li>
     <li>Registro de usuarios</li>
-  </ul>
-     <button onclick="completarClase(1)">Siguiente clase</button>
+  </ul></div>
+     <button onclick="completarClasepr(12)"class="boma">Finalizar</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `programacionfin.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 12;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

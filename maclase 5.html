@@ -45,47 +45,47 @@
      <h1>Clase 5: Jerarquía de operaciones</h1>
 
   <h2>Objetivo</h2>
-  <p>Aplicar correctamente el orden de operaciones (PEMDAS).</p>
+  <div class="contenedorma"><p>Aplicar correctamente el orden de operaciones (PEMDAS).</p></div>
 
   <h2>Temas</h2>
-  <p>El orden correcto es:</p>
+  <div class="contenedorma"><p>El orden correcto es:</p>
   <ol>
     <li>Paréntesis ( )</li>
     <li>Exponentes</li>
     <li>Multiplicación y División (de izquierda a derecha)</li>
     <li>Suma y Resta (de izquierda a derecha)</li>
-  </ol>
+  </ol></div>
 
   <h3>Ejemplos</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>3 + 2 × 5 = 3 + 10 = 13</li>
     <li>(3 + 2) × 5 = 5 × 5 = 25</li>
-  </ul>
+  </ul></div>
 
   <h2>Práctica</h2>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>(4 + 6) × 3 = ______</li>
     <li>8 + 2 × 5 - 3 = ______</li>
     <li>10 ÷ 2 + 6 × 3 = ______</li>
-  </ul>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </ul></div>
+    <button onclick="completarClasema(5)" class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasema(numero) {
+  localStorage.setItem("claseCompletadama", numero);
+  window.location.href = `maclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 5;
+  const progreso = parseInt(localStorage.getItem("claseCompletadama")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "matematica.html";
   }
 });
   </script>

@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -45,45 +48,45 @@
     <h1>Clase 10: Programación en HTML y CSS</h1>
 
   <h2>Objetivo</h2>
-  <p>Entender cómo se conecta la programación con una página web usando HTML, CSS y JavaScript.</p>
+  <div class="contenedorma"><p>Entender cómo se conecta la programación con una página web usando HTML, CSS y JavaScript.</p></div>
 
   <h2>Temas</h2>
   <h3>Estructura básica de HTML</h3>
-  <p>HTML define el contenido de la página.</p>
+  <div class="contenedorma"><p>HTML define el contenido de la página.</p></div>
 
   <h3>Conexión con JavaScript</h3>
-  <p>JavaScript permite agregar interactividad a los elementos HTML.</p>
+  <div class="contenedorma"><p>JavaScript permite agregar interactividad a los elementos HTML.</p></div>
 
   <h3>Ejemplo</h3>
-  <pre>
+  <div class="contenedorma"><pre>
 &lt;button onclick="saludar()"&gt;Haz clic&lt;/button&gt;
 &lt;script&gt;
   function saludar() {
     alert("¡Hola desde JavaScript!");
   }
 &lt;/script&gt;
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Crea una página que muestre un botón con un mensaje al hacer clic.</p>
-     <button onclick="completarClase(1)">Siguiente clase</button>
+  <div class="contenedorma"><p>Crea una página que muestre un botón con un mensaje al hacer clic.</p></div>
+     <button onclick="completarClasepr(10)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 10;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

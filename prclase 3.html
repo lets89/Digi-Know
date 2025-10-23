@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -45,60 +48,60 @@
     <h1>Clase 3: Operadores aritméticos y lógicos</h1>
 
   <h2>Objetivo</h2>
-  <p>Utilizar operadores para cálculos y comparaciones.</p>
+ <div class="contenedorma"> <p>Utilizar operadores para cálculos y comparaciones.</p></div>
 
   <h2>Temas</h2>
   <h3>Operadores aritméticos</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li><strong>+</strong> suma</li>
     <li><strong>-</strong> resta</li>
     <li><strong>*</strong> multiplicación</li>
     <li><strong>/</strong> división</li>
     <li><strong>%</strong> residuo</li>
-  </ul>
+  </ul></div>
 
   <h3>Operadores lógicos</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li><strong>></strong> mayor que</li>
     <li><strong><</strong> menor que</li>
     <li><strong>==</strong> igual</li>
     <li><strong>!=</strong> diferente</li>
     <li><strong>&&</strong> y lógico</li>
     <li><strong>||</strong> o lógico</li>
-  </ul>
+  </ul></div>
 
   <h3>Ejemplo en JavaScript</h3>
-  <pre>
+  <div class="contenedorma"><pre>
 let a = 5, b = 3;
 console.log(a + b); // 8
 console.log(a > b); // true
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Escribe un programa que calcule el promedio de tres notas:</p>
+ <div class="contenedorma"><p>Escribe un programa que calcule el promedio de tres notas:</p>
   <pre>
 let n1 = 7, n2 = 8, n3 = 9;
 let promedio = (n1 + n2 + n3) / 3;
 console.log("Promedio:", promedio);
-  </pre>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </pre></div> 
+    <button onclick="completarClasepr(3)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 3;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

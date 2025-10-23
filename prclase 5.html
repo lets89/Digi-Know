@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -45,52 +48,52 @@
     <h1>Clase 5: Bucles (for y while)</h1>
 
   <h2>Objetivo</h2>
-  <p>Repetir instrucciones de forma controlada usando bucles.</p>
+  <div class="contenedorma"><p>Repetir instrucciones de forma controlada usando bucles.</p></div>
 
   <h2>Temas</h2>
   <h3>Bucles for</h3>
-  <p>Se usa cuando conocemos cuántas veces queremos repetir algo.</p>
+  <div class="contenedorma"><p>Se usa cuando conocemos cuántas veces queremos repetir algo.</p>
   <pre>
 for (let i = 1; i <= 5; i++) {
   console.log("Iteración:", i);
 }
-  </pre>
+  </pre></div>
 
   <h3>Bucles while</h3>
-  <p>Se usa cuando la condición determina cuándo detenerse.</p>
+ <div class="contenedorma"> <p>Se usa cuando la condición determina cuándo detenerse.</p>
   <pre>
 let i = 1;
 while (i <= 5) {
   console.log("Iteración:", i);
   i++;
 }
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Crea un bucle que muestre los números del 1 al 10:</p>
+ <div class="contenedorma"><p>Crea un bucle que muestre los números del 1 al 10:</p>
   <pre>
 for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
-  </pre>
-     <button onclick="completarClase(1)">Siguiente clase</button>
+  </pre></div> 
+     <button onclick="completarClasepr(5)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 5;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

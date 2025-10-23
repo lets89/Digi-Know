@@ -45,52 +45,52 @@
     <h1>Clase 2: Propiedades de las operaciones</h1>
 
   <h2>Objetivo</h2>
-  <p>Comprender las propiedades conmutativa, asociativa y distributiva.</p>
+ <div class="contenedorma"> <p>Comprender las propiedades conmutativa, asociativa y distributiva.</p></div>
 
   <h2>Temas</h2>
   <h3>Propiedad conmutativa</h3>
-  <p>El orden no cambia el resultado.</p>
+  <div class="contenedorma"><p>El orden no cambia el resultado.</p>
   <ul>
     <li>Suma: a + b = b + a</li>
     <li>Multiplicación: a × b = b × a</li>
-  </ul>
+  </ul></div>
 
   <h3>Propiedad asociativa</h3>
-  <p>La agrupación no cambia el resultado.</p>
+  <div class="contenedorma"><p>La agrupación no cambia el resultado.</p>
   <ul>
     <li>Suma: (a + b) + c = a + (b + c)</li>
     <li>Multiplicación: (a × b) × c = a × (b × c)</li>
-  </ul>
+  </ul></div>
 
   <h3>Propiedad distributiva</h3>
-  <p>Multiplicar un número por una suma es igual a multiplicar por cada término y luego sumar.</p>
-  <p>a × (b + c) = a × b + a × c</p>
+  <div class="contenedorma"><p>Multiplicar un número por una suma es igual a multiplicar por cada término y luego sumar.</p>
+  <p>a × (b + c) = a × b + a × c</p></div>
 
   <h3>Ejemplos</h3>
-  <ul>
+ <div class="contenedorma"><ul>
     <li>2 × (3 + 4) = 2×3 + 2×4 = 6 + 8 = 14</li>
     <li>(4 + 6) + 5 = 4 + (6 + 5) = 15</li>
-  </ul>
+  </ul></div> 
 
   <h2>Práctica</h2>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>Aplica la propiedad distributiva: 5 × (2 + 3) = ______</li>
     <li>Aplica la propiedad asociativa: (4 + 6) + 5 = ______</li>
-  </ul>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </ul></div>
+    <button onclick="completarClasema(2)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
+    function completarClasema(numero) {
+  localStorage.setItem("claseCompletadama", numero);
   window.location.href = `maclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 2;
+  const progreso = parseInt(localStorage.getItem("claseCompletadama")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");

@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -45,24 +48,24 @@
     <h1>Clase 8: Objetos</h1>
 
   <h2>Objetivo</h2>
-  <p>Entender cómo agrupar datos relacionados usando objetos en JavaScript.</p>
+  <div class="contenedorma"><p>Entender cómo agrupar datos relacionados usando objetos en JavaScript.</p></div>
 
   <h2>Temas</h2>
   <h3>¿Qué es un objeto?</h3>
-  <p>Es una estructura que permite almacenar múltiples valores relacionados mediante pares clave:valor.</p>
+  <div class="contenedorma"><p>Es una estructura que permite almacenar múltiples valores relacionados mediante pares clave:valor.</p></div>
 
   <h3>Sintaxis básica</h3>
-  <pre>
+ <div class="contenedorma"> <pre>
 let persona = {
   nombre: "Luis",
   edad: 16,
   carrera: "Informática"
 };
 console.log(persona.nombre);
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Crea un objeto llamado <code>auto</code> con las propiedades marca, modelo y color:</p>
+ <div class="contenedorma"> <p>Crea un objeto llamado <code>auto</code> con las propiedades marca, modelo y color:</p>
   <pre>
 let auto = {
   marca: "Toyota",
@@ -70,25 +73,25 @@ let auto = {
   color: "Rojo"
 };
 console.log(auto.marca);
-  </pre>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </pre></div>
+    <button onclick="completarClasepr(8)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 8;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

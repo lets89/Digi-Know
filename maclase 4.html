@@ -42,53 +42,47 @@
             </div>
         </div>
     </header>
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Clase 4: Fracciones y Decimales</title>
-</head>
-<body>
+   
   <h1>Clase 4: Fracciones y decimales</h1>
 
   <h2>Objetivo</h2>
-  <p>Comprender el concepto de fracción y su relación con los decimales.</p>
+ <div class="contenedorma"> <p>Comprender el concepto de fracción y su relación con los decimales.</p></div>
 
   <h2>Temas</h2>
   <h3>Fracción como parte de un todo</h3>
-  <p>Una fracción representa una parte de un total. Ejemplo: ½ representa 1 parte de 2 iguales.</p>
+  <div class="contenedorma"><p>Una fracción representa una parte de un total. Ejemplo: ½ representa 1 parte de 2 iguales.</p></div>
 
   <h3>Equivalencia fracción-decimal</h3>
-  <p>Se puede convertir dividiendo el numerador entre el denominador.</p>
+ <div class="contenedorma"> <p>Se puede convertir dividiendo el numerador entre el denominador.</p>
   <ul>
     <li>½ = 0.5</li>
     <li>¾ = 0.75</li>
-  </ul>
+  </ul></div>
 
   <h2>Práctica</h2>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>Convierte en decimal: ⅖ = ______</li>
     <li>Convierte en decimal: ⅞ = ______</li>
     <li>Escribe en fracción: 0.25 = ______</li>
-  </ul>
-    <button onclick="completarClase(1)">Siguiente clase</button>
+  </ul></div>
+    <button onclick="completarClasema(4)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasema(numero) {
+  localStorage.setItem("claseCompletadama", numero);
+  window.location.href = `maclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 4;
+  const progreso = parseInt(localStorage.getItem("claseCompletadama")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "matematica.html";
   }
 });
   </script>

@@ -16,6 +16,9 @@
         li {
             color: #ffffff;
         }
+        pre {
+          color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -45,51 +48,51 @@
     <h1>Clase 7: Arreglos (Arrays)</h1>
 
   <h2>Objetivo</h2>
-  <p>Almacenar múltiples valores en una sola variable y recorrerlos con bucles.</p>
+  <div class="contenedorma"><p>Almacenar múltiples valores en una sola variable y recorrerlos con bucles.</p></div>
 
   <h2>Temas</h2>
   <h3>¿Qué es un arreglo?</h3>
-  <p>Es una colección ordenada de elementos, como una lista.</p>
+  <div class="contenedorma"><p>Es una colección ordenada de elementos, como una lista.</p></div>
 
   <h3>Métodos básicos</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li><strong>push:</strong> agrega un elemento al final</li>
     <li><strong>pop:</strong> elimina el último elemento</li>
     <li><strong>length:</strong> devuelve la cantidad de elementos</li>
-  </ul>
+  </ul></div>
 
   <h3>Ejemplo en JavaScript</h3>
-  <pre>
+  <div class="contenedorma"><pre>
 let frutas = ["manzana", "pera", "uva"];
 console.log(frutas[1]); // pera
-  </pre>
+  </pre></div>
 
   <h2>Práctica</h2>
-  <p>Crea un arreglo con 5 nombres y muestra cada uno en consola:</p>
+  <div class="contenedorma"><p>Crea un arreglo con 5 nombres y muestra cada uno en consola:</p>
   <pre>
 let nombres = ["Ana", "Luis", "Marta", "Pedro", "Sofia"];
 for(let i = 0; i < nombres.length; i++){
   console.log(nombres[i]);
 }
-  </pre>
-     <button onclick="completarClase(1)">Siguiente clase</button>
+  </pre></div>
+     <button onclick="completarClasepr(7)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
   </footer>
   <script>
-    function completarClase(numero) {
-  localStorage.setItem("claseCompletada", numero);
-  window.location.href = `inclase ${numero + 1}.html`;
+    function completarClasepr(numero) {
+  localStorage.setItem("claseCompletadapr", numero);
+  window.location.href = `prclase ${numero + 1}.html`;
 }
   
   document.addEventListener("DOMContentLoaded", () => {
-  const claseActual = 1;
-  const progreso = parseInt(localStorage.getItem("claseCompletada")) || 0;
+  const claseActual = 7;
+  const progreso = parseInt(localStorage.getItem("claseCompletadapr")) || 0;
 
   if (progreso < claseActual - 1) {
     alert("Debes completar la clase anterior antes de acceder a esta.");
-    window.location.href = `clase${progreso}.html` || "ingles.html";
+    window.location.href = `clase${progreso}.html` || "programacion.html";
   }
 });
   </script>

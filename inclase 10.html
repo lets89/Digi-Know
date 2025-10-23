@@ -45,11 +45,11 @@
      <h1>Clase 10: Comida y bebida</h1>
 
   <h2>Objetivo</h2>
-  <p>Hablar sobre alimentos, bebidas y preferencias personales.</p>
+  <div class="contenedorma"><p>Hablar sobre alimentos, bebidas y preferencias personales.</p></div>
 
   <h2>Temas</h2>
   <h3>Vocabulario de comida</h3>
-  <ul>
+ <div class="contenedorma"> <ul>
     <li>bread – pan</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Bre')">
     <audio id="Bre" src="Bre.m4a"></audio>
     <li>rice – arroz</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Ric')">
@@ -60,10 +60,10 @@
     <audio id="Fru" src="Fru.m4a"></audio>
     <li>vegetables – verduras</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Veg')">
     <audio id="Veg" src="Veg.m4a"></audio>
-  </ul>
+  </ul></div>
 
   <h3>Bebidas</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>water – agua</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Wat')">
     <audio id="Wat" src="Wat.m4a"></audio>
     <li>juice – jugo</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Jui')">
@@ -72,21 +72,21 @@
     <audio id="Cof" src="Cof.m4a"></audio>
     <li>milk – leche</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Milk')">
     <audio id="Milk" src="Milk.m4a"></audio>
-  </ul>
+  </ul></div>
 
   <h3>Expresar gustos</h3>
-  <ul>
+  <div class="contenedorma"><ul>
     <li>I like apples.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Lik1')">
     <audio id="Lik1" src="Lik1.m4a"></audio>
     <li>I don’t like milk.</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Lik2')">
     <audio id="Lik2" src="Lik2.m4a"></audio>
     <li>Do you like rice?</li><img src="sonido.png" width="40px" height="40px" style="cursor:pointer;" onclick="reproducirSonido('Lik3')">
     <audio id="Lik3" src="Lik3.m4a"></audio>
-  </ul>
+  </ul></div>
 
   <h2>Práctica</h2>
-  <p>Escribe tu menú favorito con desayuno, almuerzo y cena.
-    <button onclick="completarClase(10)">Siguiente clase</button>
+  <div class="contenedorma"><p>Escribe tu menú favorito con desayuno, almuerzo y cena.</p></div>
+    <button onclick="completarClase(10)"class="boma">Siguiente clase</button>
      <footer>
     <p>&copy; 2025 Digiknow</p>
     <p><a href="contactanos.html" style="color: #ffffff;">Contactanos</a></p>
@@ -100,7 +100,7 @@
   }
     function completarClase(numero) {
   localStorage.setItem("claseCompletada", numero);
-  wwindow.location.href = `inclase ${numero + 1}.html`;
+  window.location.href = `inclase ${numero + 1}.html`;
 }
 document.addEventListener("DOMContentLoaded", () => {
   const claseActual = 10; 
