@@ -110,47 +110,72 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const nombreElemento = document.getElementById("nombreUsuario");
-      const preview = document.getElementById("preview");
-      const usuario = localStorage.getItem("usuario_actual");
-      const fotoGuardada = localStorage.getItem("foto_perfil");
-
-      
-      if (usuario) {
-        nombreElemento.textContent = "Bienvenido, " + usuario + " 👋";
-      } else {
-        nombreElemento.textContent = "Usuario no identificado";
-      }
-
-      
-      if (fotoGuardada) {
-        preview.src = fotoGuardada;
-      }
-    });
-
-    
-    const input = document.getElementById("fotoInput");
+  document.addEventListener("DOMContentLoaded", () => {
+    const nombreElemento = document.getElementById("nombreUsuario");
     const preview = document.getElementById("preview");
+    const usuario = localStorage.getItem("usuario_actual");
 
-    input.addEventListener("change", (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          preview.src = e.target.result;
-          
-          localStorage.setItem("foto_perfil", e.target.result);
-        };
-        reader.readAsDataURL(file);
-      }
-    });
+    if (usuario) {
+      nombreElemento.textContent = "Bienvenido, " + usuario + " 👋";
+    } else {
+      nombreElemento.textContent = "Usuario no identificado";
+    }
 
     
-    document.getElementById("guardarBtn").addEventListener("click", () => {
-      alert("Foto de perfil guardada correctamente ");
-    });
-  </script>
+    const fotoGuardada = localStorage.getItem("foto_perfil");
+    if (fotoGuardada) preview.src = fotoGuardada;
+  });
 
+  const input = document.getElementById("fotoInput");
+  const preview = document.getElementById("preview");
+
+  input.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  document.getElementById("guardarBtn").addEventListener("click", async () => {
+    const usuario = localStorage.getItem("usuario_actual");
+    const file = document.getElementById("fotoInput").files[0];
+
+    if (!usuario) {
+      alert("Debes iniciar sesión primero.");
+      return;
+    }
+
+    if (!file) {
+      alert("Selecciona una imagen antes de guardar.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("imagen", file);
+    formData.append("Usuario", usuario);
+
+    try {
+      const res = await fetch("http://localhost:3000/subirImagen", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert(" Foto de perfil guardada correctamente");
+        localStorage.setItem("foto_perfil", "http://localhost:3000/" + data.ruta);
+      } else {
+        alert(" Error al guardar la imagen: " + data.error);
+      }
+    } catch (error) {
+      console.error(error);
+      alert(" No se pudo conectar con el servidor.");
+    }
+  });
+</script>
 </body>
 </html>
