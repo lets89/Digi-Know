@@ -76,6 +76,7 @@ const STORAGE_KEY = "digiknow_recientes_clases";
 const titulo = document.title;
 const url = location.href;
 
+
 let historial = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 
 historial = historial.filter(p => p.url !== url);
