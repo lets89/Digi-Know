@@ -25,13 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const response = await fetch("http://192.168.1.40:3000/registro", {
-            method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ Usuario: "prueba", Correo: "prueba@mail.com", Contraseña: "1234" })
-})
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.error("Error:", err));
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ Usuario, Correo, Contraseña })
+        });
 
         const data = await response.json();
         if (response.ok) {
