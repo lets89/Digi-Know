@@ -249,70 +249,69 @@ p {
         font-size: 14px;
         padding: 15px;
     }
-}
 
-
-
-.menu label {
-  display: none;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-}
-
-.menu label span,
-.menu label span::before,
-.menu label span::after {
-  display: block;
-  background: #fff;
-  height: 4px;
-  width: 25px;
-  border-radius: 2px;
-  transition: .3s;
+    .menu-icon {
+  display: inline-block !important;
+  width: 30px;
+  height: 25px;
   position: relative;
+  z-index: 1000;
 }
-
-.menu label span::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  width: 25px;
-  height: 4px;
-  background: #fff;
-}
-.menu label span::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  width: 25px;
-  height: 4px;
-  background: #fff;
-}
-
-
-#menu-toggle:checked + label span {
-  background: transparent;
-}
-#menu-toggle:checked + label span::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-#menu-toggle:checked + label span::after {
-  transform: rotate(-45deg);
-  top: 0;
 }
 
 #menu-toggle {
   display: none;
 }
 
-#menu-toggle:checked ~ ul {
+
+
+
+.menu-icon span,
+.menu-icon span::before,
+.menu-icon span::after {
+  content: '';
   display: block;
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.3s ease;
 }
 
+.menu-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-icon span::before {
+  top: -10px;
+}
+
+.menu-icon span::after {
+  top: 10px;
+}
+
+
+#menu-toggle:checked + label.menu-icon span {
+  background: transparent;
+}
+
+#menu-toggle:checked + label.menu-icon span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+#menu-toggle:checked + label.menu-icon span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
 .Menu img {
     width: 70px;
     height: 60px;
