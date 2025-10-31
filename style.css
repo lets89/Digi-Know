@@ -128,42 +128,160 @@ p {
     margin: 80px 0 0 150px;
 }
 
-@media(max-width:991px) {
+@media(max-width:457px) {
 
-    .content {
-        min-height: 70px;
-    }
 
-    .menu {
-        top: 0;
-        padding: 20px;
-    }
-
-    .menu label {
-        display: initial;
-    }
-
-    .menu .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background:rgb(148, 148, 148);
-        
-    display: none;
-    }
-    .menu .navbar ul li {
-        width: 100%;
-    }
-
-    #menu:checked ~ .navbar {
-        display: initial;
-    }
+body {
+overflow-x: hidden;
 }
 
+
+.menu {
+top: 0;
+padding: 10px;
+flex-direction: row;
+}
+
+
+.menu .navbar {
+display: none;
+flex-direction: column;
+background:#4b3727;
+width: 100%;
+text-align: center;
+padding: 8px 0;
+position: absolute;
+top: 60px;
+left: 0;
+}
+
+
+#menu:checked ~ .navbar {
+display: flex;
+}
+
+
+.menu label {
+display: block;
+cursor: pointer;
+}
+
+
+.menu .navbar ul li {
+width: 50px;
+}
+
+
+h1, h2, p {
+margin: 10px;
+text-align: center;
+}
+
+
+.imagen-con-texto {
+width: 25vw;
+height: 50vh;
+background-size: cover;
+justify-content: center;
+align-items: center;
+}
+
+
+.espe, .espe2, .espe3 {
+width: 140px;
+height: 140px;
+margin: 10px auto;
+display: block;
+}
+
+
+.form-container {
+  display: none; 
+  background: #f1f1f1;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  width: 300px;
+  
+}
+
+
+.form-container input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+.contenedorma, .contenedorin, .contenedorpr {
+flex-direction: column;
+margin: 20px;
+padding: 15px;
+}
+}
+
+
+
+.menu label {
+display: none;
+width: 35px;
+height: 35px;
+cursor: pointer;
+justify-content: center;
+align-items: center;
+padding: 5px;
+}
+
+
+.menu label span,
+.menu label span::before,
+.menu label span::after {
+display: block;
+background: #fff;
+height: 4px;
+width: 25px;
+border-radius: 2px;
+transition: .3s;
+position: relative;
+}
+
+
+.menu label span::before {
+content: "";
+position: absolute;
+top: -8px;
+width: 25px;
+height: 4px;
+background: #fff;
+}
+.menu label span::after {
+content: "";
+position: absolute;
+top: 8px;
+width: 25px;
+height: 4px;
+background: #fff;
+}
+
+
+#menu:checked + label span {
+background: transparent;
+}
+#menu:checked + label span::before {
+transform: rotate(45deg);
+top: 0;
+}
+#menu:checked + label span::after {
+transform: rotate(-45deg);
+top: 0;
+}
+
+
 .Menu img {
-    width: 90px;
-    height: 80px;
+    width: 70px;
+    height: 60px;
 }
 
 .imagen-con-texto {
@@ -241,7 +359,7 @@ p {
 }
 
 .form-container {
-    margin: 100px 550px;
+  margin: auto;
   background: #4b3727;
   padding: 20px;
   border-radius: 10px;
@@ -289,7 +407,7 @@ p {
       text-align: center;
     }
 .contenedorma {
-  margin: 50px 150px;
+  margin: auto;
   background: #4b3727;
   padding: 20px;
   border-radius: 20px;
@@ -320,7 +438,7 @@ p {
 }
 
 .contenedorin {
-  margin: 50px 150px;
+  margin: auto;
   background: #4b3727;
   padding: 20px;
   border-radius: 20px;
@@ -345,7 +463,8 @@ p {
 
 .imagenma img {
     display: block;    
-  border-radius: 20px;    
+  border-radius: 20px;  
+  margin: 5px 80px;  
 }
 
 .textoma p {
@@ -354,7 +473,7 @@ p {
 }
 
 .contenedorpr {
-  margin: 50px 150px;
+  margin: auto;
   background: #4b3727;
   padding: 20px;
   border-radius: 20px;
@@ -368,7 +487,8 @@ p {
 
 .imagenpr img {
     display: block;    
-  border-radius: 20px;    
+  border-radius: 20px;
+    margin: 5px 80px;      
 }
 
 .textopr p {
@@ -376,7 +496,7 @@ p {
     color: white;            
 }
 .contenedorin {
-  margin: 50px 150px;
+  margin: auto;
   background: #4b3727;
   padding: 20px;
   border-radius: 20px;
@@ -390,7 +510,8 @@ p {
 
 .imagenin img {
     display: block;    
-  border-radius: 20px;    
+  border-radius: 20px;   
+    margin: 5px 80px;   
 }
 
 .textoin p {
@@ -449,17 +570,4 @@ p {
     }
 
     
-    @media (min-width: 900px) {
-      .recientes-row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-        justify-items: center;
-      }
-      .tarjeta { width: 100%; max-width: 260px; flex: 0 0 auto; }
-    }
-
-    .bloqueado {
-  pointer-events: none;
-  opacity: 0.5;
-    }
+    
