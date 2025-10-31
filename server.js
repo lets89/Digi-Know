@@ -78,7 +78,7 @@ app.post("/login", (req, res) => {
 });
 
 app.listen(3000, '0.0.0.0', () => {
-  console.log("Servidor corriendo en http://192.168.0.6:3000");
+  console.log("Servidor corriendo en http://192.168.1.40:3000");
 });
 
 

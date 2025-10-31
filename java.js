@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("http://192.168.0.6:3000/registro", {
+        const response = await fetch("http://192.168.1.40:3000/registro", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ Usuario, Correo, Contraseña })
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("http://192.168.0.6:3000/login", {
+        const response = await fetch("http://192.168.1.40:3000/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ Usuario, Contraseña })
