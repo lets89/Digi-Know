@@ -263,9 +263,6 @@ p {
   display: none;
 }
 
-
-
-
 .menu-icon span,
 .menu-icon span::before,
 .menu-icon span::after {
@@ -585,7 +582,10 @@ p {
       transition: transform .18s ease, background .18s ease;
       cursor: pointer;
     }
-    .tarjeta:hover { transform: translateY(-6px); background: rgba(255,255,255,0.10); }
+    .tarjeta:hover { 
+      transform: translateY(-6px); 
+      background: rgba(255,255,255,0.10); 
+    }
 
     .tarjeta img {
       width: 100%;
