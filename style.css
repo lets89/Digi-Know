@@ -37,10 +37,12 @@ h2,h3 {
   margin: 80px 0 0 100px;
 }
 
+
 .menu .navbar ul li {
     position: relative;
     float: left;
 }
+
 
 .menu .navbar ul li a {
     font-size: 14px;
